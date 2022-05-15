@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TODO_Sample_MVP">
         <activity
-            android:name=".addedittask.AddEditActivity"
+            android:name=".addedittask.AddEditTaskActivity"
             android:exported="false" />
         <activity
             android:name=".tasksdetail.TaskDetailActivity"

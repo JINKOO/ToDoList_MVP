@@ -9,13 +9,13 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.kjk.todo_sample_mvp.R
-import com.kjk.todo_sample_mvp.addedittask.AddEditActivity
+import com.kjk.todo_sample_mvp.addedittask.AddEditTaskActivity
 import com.kjk.todo_sample_mvp.databinding.FragmentTasksBinding
 
 class TasksFragment : Fragment(), TasksContract.View {
 
     private lateinit var binding: FragmentTasksBinding
-    override lateinit var presenter: TasksContract.Presenter
+    lateinit var presenter: TasksContract.Presenter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,6 +30,7 @@ class TasksFragment : Fragment(), TasksContract.View {
         )
 
         initView()
+        presenter = TasksPresenter(this)
 
         return binding.root
     }
@@ -50,8 +51,8 @@ class TasksFragment : Fragment(), TasksContract.View {
 
     // Task를 추가하는 화면으로 이동
     override fun showAddTask() {
-        val intent = Intent(context, AddEditActivity::class.java)
-        startActivityForResult(intent, AddEditActivity.REQUEST_ADD_TASK)
+        val intent = Intent(context, AddEditTaskActivity::class.java)
+        startActivityForResult(intent, AddEditTaskActivity.REQUEST_ADD_TASK)
     }
 
     companion object {

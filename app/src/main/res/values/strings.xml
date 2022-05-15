@@ -11,4 +11,7 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="fab_add">TODO</string>
+    <string name="title_hint">Title</string>
+    <string name="content_hint">Enter your TO-DO here</string>
+    <string name="empty_item_message">One Of the Value is Empty.</string>
 </resources>
