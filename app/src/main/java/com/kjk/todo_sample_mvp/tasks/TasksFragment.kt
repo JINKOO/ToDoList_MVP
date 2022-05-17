@@ -15,7 +15,7 @@ import com.kjk.todo_sample_mvp.databinding.FragmentTasksBinding
 class TasksFragment : Fragment(), TasksContract.View {
 
     private lateinit var binding: FragmentTasksBinding
-    lateinit var presenter: TasksContract.Presenter
+    override lateinit var presenter: TasksContract.Presenter
 
     override fun onCreateView(
         inflater: LayoutInflater,

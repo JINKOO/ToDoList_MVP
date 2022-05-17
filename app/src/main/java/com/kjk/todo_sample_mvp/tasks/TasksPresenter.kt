@@ -8,6 +8,14 @@ class TasksPresenter(
     private val tasksView: TasksContract.View
 ) : TasksContract.Presenter {
 
+    init {
+        tasksView.presenter = this
+    }
+
+    override fun start() {
+        TODO("Not yet implemented")
+    }
+
     override fun addNewTasks() {
         tasksView.showAddTask()
     }

@@ -25,21 +25,23 @@ class TasksActivity : AppCompatActivity() {
 
         // app bar init
         setSupportActionBar(binding.appBarMain.toolbar)
+        supportActionBar?.apply {
+            setHomeAsUpIndicator(R.drawable.ic_menu)
+            setDisplayHomeAsUpEnabled(true)
+        }
 
         drawerLayout = binding.drawerLayout.apply {
             setStatusBarBackground(R.color.colorPrimaryDark)
         }
 
-        val navView: NavigationView = binding.navView
+        // TODO navController
+        //val navView: NavigationView = binding.navView
         //val navController = findNavController(R.id.nav_host_fragment_content_main)
 
         // tasksFragment추가
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
         val tasksFragment = TasksFragment.newInstance()
-        fragmentTransaction
+        supportFragmentManager.beginTransaction()
             .add(R.id.fragment_container, tasksFragment)
-//            .addToBackStack(null)
             .commit()
 
         // Passing each menu ID as a set of Ids because each
@@ -51,9 +53,7 @@ class TasksActivity : AppCompatActivity() {
         )
 
         // Presenter 생성
-        tasksPresenter = TasksPresenter(
-            tasksFragment
-        )
+        tasksPresenter = TasksPresenter(tasksFragment)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

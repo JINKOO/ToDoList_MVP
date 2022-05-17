@@ -22,7 +22,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
 
             <EditText
-                android:id="@+id/add_task_content"
+                android:id="@+id/add_task_description"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/content_default_height"
                 android:hint="@string/content_hint"

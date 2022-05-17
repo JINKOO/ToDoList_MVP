@@ -1,8 +1,11 @@
 package com.kjk.todo_sample_mvp.addedittask
 
+import com.kjk.todo_sample_mvp.BasePresenter
+import com.kjk.todo_sample_mvp.BaseView
+
 interface AddEditTaskContract {
 
-    interface View {
+    interface View : BaseView<Presenter> {
         fun showEmptyTaskMessage()
 
         fun showTasksList()
@@ -12,7 +15,7 @@ interface AddEditTaskContract {
         fun setDescription(title: String)
     }
 
-    interface Presenter {
+    interface Presenter : BasePresenter {
         // task 저장
         fun saveTask(title: String, description: String)
     }

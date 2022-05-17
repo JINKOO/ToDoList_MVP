@@ -14,4 +14,6 @@
     <string name="title_hint">Title</string>
     <string name="content_hint">Enter your TO-DO here</string>
     <string name="empty_item_message">One Of the Value is Empty.</string>
+    <string name="new_to_do_label">New TO-DO</string>
+    <string name="edit_to_do_label">Edit TO-DO</string>
 </resources>
